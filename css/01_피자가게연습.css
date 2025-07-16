@@ -1,0 +1,71 @@
+/*
+title 
+배경색 #ff7043 
+글자 색상 white
+글자크기 28px
+패딩 상우하좌 20px
+여백 0px
+
+.nav
+margin 10px auto
+
+a
+margin 0 15px
+밑줄제거
+글자 굵게
+글자 색상 #d84315*/
+body {
+  /*기본 body에는 원래 margin이 있는데 그걸 없애는 것*/
+  margin: 0px;
+}
+.title {
+  background-color: #ff7043;
+  color: white;
+  font-size: 28px;
+  padding: 20px;
+  margin: 0px;
+}
+
+.nav a {
+  margin: 10px auto;
+  /*justify-self: center;*/
+  margin: 0px 15px;
+  text-decoration: none;
+  font-weight: bold;
+  color: #d84315;
+}
+
+.box {
+  background-color: #ffe0b2;
+  padding: 20px;
+  border: 5px solid #ff7043;
+  margin: 20px;
+  border-radius: 10px;
+  text-align: center;
+}
+.pizza-list {
+  justify-self: center;
+  display: flex;
+}
+.pizza-item {
+  width: 250px;
+  background-color: white;
+  padding: 15px;
+  border: 3px solid #ffa726;
+  border-radius: 10px;
+}
+img {
+  width: 250px;
+  height: 250px;
+}
+
+.footer {
+  background-color: #ffccbc;
+  text-align: center;
+  padding: 15px;
+  font-size: 14px;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}

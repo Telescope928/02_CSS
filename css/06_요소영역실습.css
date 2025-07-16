@@ -1,0 +1,56 @@
+.btn-basic {
+  background-color: green;
+  color: white;
+  padding: 12px 24px; /*보통 가로 세로*2 정도*/
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 8px;
+}
+/*버튼 위로 마우스를 올렸을 때*/
+.btn-basic:hover {
+  background-color: darkgreen;
+  font-size: 20px;
+}
+/*버튼을 클릭 했을 때*/
+.btn-basic:active {
+  background-color: red;
+  font-size: 30px;
+}
+
+/*
+배경색 #ff6f61
+글자색 white
+패딩 상하 12 좌우 24
+실선 없음
+모서리 12
+폰트크기 18
+폰트굵기 굵게
+커서 포인터
+
+hover
+배경색 #ff3b2e
+글자색 #fffde7
+
+active
+배경색 #d6281d
+글자색 white
+*/
+.btn-pretty {
+  background-color: #ff6f61;
+  color: white;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 12px;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+}
+.btn-pretty:hover {
+  background-color: #ff3b2e;
+  color: #fffde7;
+}
+.btn-pretty:active {
+  background-color: #d6281d;
+  color: white;
+}

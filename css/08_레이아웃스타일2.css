@@ -1,0 +1,118 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+.title {
+  background-color: steelblue;
+  color: white;
+  padding: 100px 20px 30px;
+  /*요소가 화면을 벗어나면 지정된 위치에 고정*/
+  position: sticky;
+  top: -70px;
+}
+/*
+요소가 화면을 벗어나면 지정된 위치에 고정
+화면 스크롤을 내릴 경우 title 내부에 작성된 글자는 보이지 않는 것이 맞음
+but 특정 요소를 화면에서 벗어나더라도 고정하길 원한다면 position 기능 이용
+top 위 위치를 고정으로 -70의 값을 준 것은
+고정된 요소의 크기를 -70 만큼 줄여서 보여질 것을 설정*/
+div {
+  border: 1px solid black;
+}
+.container {
+  width: 340px;
+  height: 304px;
+  border: 2px dashed red;
+  margin: 30px;
+  position: relative; /*기준*/
+}
+/*
+position 에서 동일한 속성을 사용 할 경우
+위치가 동일 할 경우 div 나 태그를 가장 마지막에 작정한 태그가
+가장 위에 보여짐
+그럴 때 z-index를 통해 보여지는 우선순위 결정 가능
+z-index 값이 클 수록 최상단에 보여짐
+*/
+.first {
+  width: 300px;
+  height: 300px;
+  background-color: yellow;
+  position: absolute;
+  z-index: 10;
+}
+.second {
+  width: 200px;
+  height: 200px;
+  background-color: green;
+  position: absolute;
+  /*container 요소에서
+  왼쪽 벽으로부터 50px 만큼 떨어진 위치에 배치*/
+  left: 50px;
+  top: 50px;
+  z-index: 15;
+}
+.third {
+  width: 100px;
+  height: 100px;
+  background-color: orange;
+  position: absolute;
+  right: 100px;
+  bottom: 100px;
+  z-index: 30;
+}
+
+.container-2 {
+  width: 486px;
+  height: 272px;
+  position: relative;
+}
+
+/*
+position: absolute; +
+margin: auto; +
+top: 0; +
+bottom: 0; +
+left: 0; +
+right: 0; = 
+가로 세로 모두 중앙 정렬을 하는 고전적인 css 가운데 정렬 기법
+*/
+.center {
+  width: 50px;
+  height: 50px;
+  background-color: hotpink;
+  /*테두리를 가장 둥글게*/
+  border-radius: 50%;
+  /*다른요소와의 간격을 자동설정. 가로가운데*/
+  margin: auto;
+  position: absolute;
+  /*모든방향에서 끌어당김 == 거열형?*/
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+/* fixed */
+.fixed-area {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  position: fixed;
+  bottom: 30px;
+  right: 10px;
+  background-color: white;
+}
+a {
+  width: 100%;
+  height: 100%;
+  display: block;
+  border-radius: 50%;
+  text-align: center;
+  /*line-height(행간설정) : 가로나 세로에서 위치 설정*/
+  line-height: 35px;
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+  user-select: none; /*사용자가 드래그를 사용 못하도록 방지*/
+}

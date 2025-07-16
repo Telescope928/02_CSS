@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>요소의 영역(여백)관련 스타일</title>
+    <link rel="stylesheet" href="../css/06_요소영역스타일.css" />
+  </head>
+  <body>
+    <h1>요소의 영역(여백)관련 스타일</h1>
+    <pre>
+        html 요소는 총 4가지의 영역으로 구성되어있음
+        1. content(내용) 영역 : 요소의 내용이 작성되어지는 영역
+           (시작태그와 종료태그 사이에 작성되는 내용을 생각하면 된다.)
+        2. padding : content와 border 사이의 공간
+        3. border : 요소의 테두리 영역 content 보다 바깥쪽에서 content를 감싸고 있음
+        4. margin(여백, 간격) : 다른 요소와의 간격을 나타내는 영역
+    </pre>
+
+    <hr />
+    <pre>
+    -width/height 크기 속성의 범위를 지정하는 class속성 
+    1. content box : 가로세로 지정 시 content 영역의 크기만 조정(기본값) 
+    2. border box : 가로세로지정 시 
+    </pre>
+
+    <h3>기준</h3>
+    <div class="box">내용(content)</div>
+
+    <hr />
+    <h3>border 테두리</h3>
+    <div class="box border">내용(content)</div>
+
+    <hr />
+    <h3>border 테두리</h3>
+    <div class="box border content">content</div>
+
+    <hr />
+    <h3>border 테두리</h3>
+    <div class="box border padding">padding</div>
+
+    <hr />
+    <h3>margin(다른 요소와의 간격)</h3>
+    <pre>
+        margin 영역은 다른 margin 과 겹칠 수 있다. 이때 더 큰 값을 가진 margin이 적용된다.
+    </pre>
+
+    <style>
+      .margin1 {
+        margin: 50px;
+      }
+      .margin2 {
+        margin: 100px;
+      }
+    </style>
+    <div class="box margin1">내용(content)</div>
+    <div class="box margin2">내용(content)</div>
+
+    <h1>padding, margin, border 의 방향성</h1>
+    <pre>
+      (000 == padding, margin, border 를 나타낸다.)
+
+      000 - top : 크기 -> 위쪽 방향 크기 지정
+      000 - bottom : 크기 -> 아래쪽 방향 크기 지정
+      000 - left : 크기 -> 왼쪽 방향 크기 지정
+      000 - right : 크기 -> 오른쪽 방향 크기 지정
+
+      border 의 속성 값은 [크기, 모양, 색상] 형식으로 지정
+    </pre>
+
+    <style>
+      /*css 폴더 내에 이미 box style이 존재하므로 작성 하지 않아도
+        기존에 작성된 스타일이 적용된다.*/
+      .box {
+        width: 100px;
+        height: 100px;
+        background-color: lightsalmon;
+      }
+
+      #test1 {
+        padding-top: 10px;
+        padding-bottom: 200px;
+        padding-left: 5px;
+        padding-right: 150px;
+
+        margin-top: -30px;
+        margin-bottom: 100px;
+        margin-left: 50px;
+        margin-right: 300px;
+
+        /*
+      border : 선
+      border      :     선의 굵기     선 종류       선 색상
+      선 종류 : solid(실선), dotted(점선.), double(이중선), dashed(점선-)
+      */
+        border-top: 5px solid red;
+        border-bottom: 3px dotted black;
+        border-left: 4px double black;
+        border-right: 3px dashed green;
+      }
+    </style>
+
+    <div class="box" id="test1">content</div>
+
+    <style>
+      #test2 {
+        /*
+          border 는 한 번에 쓸 때 상우하좌의 굵기를 통일해서 작성
+          속성 값을 2개에서 4개로 나누어 작성하기를 원한다면
+          top, bottom, left, right 로 나누어서 작성해야한다.
+          border: 3px 2px solid black; <- 이런 식의 사용은 불가능
+          */
+        border: 2px solid black;
+
+        /*border-radius : 모서리를 둥글게 만들 때 사용
+          button 이나 img 의 각에 라운딩을 줄 때 주로 사용*/
+
+        border-radius: 3px;
+      }
+    </style>
+    <div class="box" id="test2">content</div>
+
+    <pre>
+      padding | margin | border-width | border-radius : 속성 값(크기)
+      -> 속성 값을 1개만 줄 때 : 상하좌우 동일한 값 부여
+      -> 속성 값을 2개만 줄 때 : 상하 좌우 2가지로 나누어서 부여(button, padding 에 자주 사용)
+      -> 3개 : 상 좌우 하 | 위->좌우->아래쪽 순서로 부여
+      -> 4개 : 상 우 하 좌 순서대로 부여
+    </pre>
+    <hr />
+    <h2>margin : auto;</h2>
+    <pre>
+      다른 요소와의 간격을 자동으로 지정하여 가운데 정렬하게 만드는 속성 값
+      - 기본적으로(보통) 좌우 간격만 자동으로 지정
+      - 지정되는 대상은 block 형식의 요소여야 한다.
+        (inline, inline-block, block 은 text-align : center 를 이용해 가운데 정렬)
+        (text-align == 글자 정렬)
+</pre
+    >
+
+    <style>
+      .container {
+        width: 500px;
+        height: 500px;
+        border: 3px solid black;
+        /*이름 내부에 들어있는 margin, padding 적용*/
+        box-sizing: content-box;
+      }
+      #test3 {
+        /*auto의 경우 좌우 가운데 정렬*/
+        margin: auto;
+        margin-top: 200px;
+      }
+    </style>
+    <div class="container">
+      <div class="box" id="test3">auto test</div>
+    </div>
+  </body>
+</html>

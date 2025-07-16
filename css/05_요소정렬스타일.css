@@ -1,0 +1,41 @@
+div {
+  border: 1px solid black;
+  box-sizing: border-box;
+}
+.test {
+  width: 300px;
+  height: 200px;
+  background-color: #ddd;
+}
+/*float 지정 식 block 성질 해제(한줄 차지x)*/
+.float-left {
+  width: 50px;
+  height: 50px;
+  float: left;
+  background-color: pink;
+}
+.clear-left {
+  /*float으로 된 요소 아래로 현재 스타일이 적용된 태그를
+          강제로 내려오도록 설정 (왼쪽으로...)*/
+  clear: left;
+}
+
+.float-right {
+  width: 50px;
+  height: 50px;
+  float: right;
+  background-color: yellow;
+}
+.clear-right {
+  /*float으로 된 요소 아래로 현재 스타일이 적용된 태그를
+          강제로 내려오도록 설정 (왼쪽으로...)*/
+  clear: right;
+}
+
+.clear-both {
+  /*하나의 태그에 동일한 css 속성을 적용해도
+          제일 마지막으로 작성된걸로 적용된다(덮어씌움)*/
+  clear: both;
+  clear: left;
+  clear: right;
+}
