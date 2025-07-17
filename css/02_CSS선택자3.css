@@ -1,0 +1,54 @@
+/* 일반 구조 선택자 */
+
+/* 구조선택자를 작성 할 때 */
+/* p:first-child -> 이렇게만 작성 하면 됨 p 태그 내에서 첫번째 자식을 선택*/
+/* 하지만, 이렇게 사용 할 경우 html 문서 내에 있는 모든 p 태그에 작성 되기때문에 */
+/* 아래와 같이 작성하는 것이 안전! */
+/* #test1 > p:first-child -> */
+
+/* 형제들 중 첫번째가 A 가 맞다면 선택 */
+#test1 > p:first-child {
+  background-color: red;
+}
+
+/* 형제들 중 마지막이 A 가 맞다면 선택 */
+#test1 > p:last-child {
+  background-color: blue;
+}
+
+/* 형제들 중 n번째가 A 가 맞다면 선택 */
+#test1 > p:nth-child(3) {
+  background-color: yellow;
+}
+
+/* 형제들 중 뒤에서 n번째가 A 가 맞다면 선택 */
+#test1 > p:nth-last-child(4) {
+  border: 5px dotted black;
+}
+
+/* 홀수번째가 p 태그 선택 */
+#test1 > p:nth-child(2n-1) {
+  text-decoration: line-through;
+}
+
+/* 짝수번째가 p 태그 선택 */
+#test1 > p:nth-child(2n) {
+  text-decoration: underline;
+}
+
+/* table < tr:nth-child(odd) {
+  background-color: #f2f2f2;
+} */
+
+/* 위는 작동 안함 */
+/* table내에 있는 tr td는 자식이 아니라 그냥 같은 태그 도구임  */
+
+/* odd : 홀수 */
+/* even : 짝수 */
+
+tr:nth-child(odd) {
+  background-color: #f2f2f2;
+}
+tr:nth-child(even) {
+  background-color: #fff;
+}

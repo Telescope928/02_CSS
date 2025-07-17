@@ -121,3 +121,81 @@ p[data="data-2"] {
 .input3:disabled {
   background-color: lightcoral;
 }
+
+/* 동위 선택자 */
+/* 바로 뒤 형제 요소 하나 */
+#div1 + div {
+  background-color: yellow;
+}
+
+/* 
+~ : 뒤에 존재하는 형제요소 중 일치하는 요소 모두 선택
+*/
+#div3 ~ div {
+  /* 중간에 존재하는 p 태그를 제외하고 div는 모두 배경색 설정 */
+  background-color: lawngreen;
+}
+
+/* checkbox 만들기 */
+/* 1. label 요소를 checkbox 모양으로 만들기 */
+/* check 라는 태그 요소 바로 뒤에 있는 label 하나만 선택하겠다.*/
+#check + label {
+  width: 30px;
+  height: 30px;
+  border: 1px solid black;
+  /*크기지정 o, 한 줄에 배치할 수 있도록 수평분할*/
+  display: inline-block;
+  cursor: pointer;
+  border-radius: 20%;
+  /*사용자가 선택을 하지 못하게 막기*/
+  user-select: none;
+}
+
+/*체크박스가 체크 되었을 때 label에 체크박스 이미지 표시*/
+
+/* 1. check + label 의 경우에는 체크밖스에 체크를 하지 않아도 체크를 한 듯한 이미지가 보이는 경우 */
+#check:check + label {
+  background-image: url(../images/checkbox.png);
+  background-size: cover;
+}
+/* checked + label 의 경우에는 체크박스에 체크를 해야지만 체크를 한 듯한 이미지가 보이게됨 */
+#check:checked + label {
+  background-image: url(../images/checkbox.png);
+  background-size: cover;
+}
+/* 만약에 빈 네모창에 개발자가 넣고자 하는 체크가 된 박스 이미지를 표시하기를 원한다면
+   check */
+#check {
+  display: none;
+}
+
+/* 파일 버튼 만들기 */
+/* 1. 파일 선택 버튼을 업로드 한 이미지로 변경*/
+#imgFile + label {
+  width: 30px;
+  height: 30px;
+  border: 1px solid black;
+  /* 라벨의 경우에는 라벨 태그 내부에 텍스트를 작성해주거나
+  라벨 내부에 이미지를 업로드 해야함 */
+  display: inline-block;
+  border-radius: 20%;
+  cursor: pointer;
+  background-image: url(../images/upload.png);
+  background-size: cover;
+  user-select: none;
+}
+
+/*파일 선택 input 숨기기*/
+#imgFile {
+  display: none;
+}
+/*파일 선택 input 숨기기*/
+#imgFile2 {
+  display: none;
+}
+/*#imgFile2 다음에 오는 img 크기 조정하기 */
+/* 후손 선택자 화살표를 이용해서 #imgFile2 다음에 label 내부의 이미지만 선택 */
+
+#imgFile2 + label > img {
+  width: 30px;
+}
