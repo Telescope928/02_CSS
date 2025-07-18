@@ -84,6 +84,13 @@ body {
   text-align: center;
 }
 
+/* 기기 너비 크기가 최소 769 이상일 때는
+   반응형 박스 ::after 이용해서 (데스크탑 화면) 글자 추가 하기 */
+@media (min-width: 770px) {
+  .반응형-박스::after {
+    content: "(데스크탑 화면)";
+  }
+}
 /* 768 태블릿 가로 크기로 기기 화면 너비가 줄어들었을 경우 */
 @media (max-width: 768px) {
   .container {
